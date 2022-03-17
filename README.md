@@ -3,6 +3,30 @@
 中文 | [In English](docs/README.md) 
 
 [![](https://jitpack.io/v/LittleFogCat/Android-skin-support.svg)](https://jitpack.io/#LittleFogCat/Android-skin-support)
+
+增加了 [原 Android-skin-support 库](https://github.com/ximsfei/Android-skin-support) 对新版本 AndroidX 的支持。
+
+**导入方式**
+
+1. 在根 `build.gradle` 中加入 JitPack 的依赖：
+```gradle
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+2. 在模块 `build.gradle` 中加入依赖：
+```gradle
+	dependencies {
+	        implementation 'com.github.littlefogcat:android-skin-support:latest-version'
+	}
+```
+
+
+**以下是原作者说明**
+
 ![build](https://img.shields.io/badge/build-passing-green.svg)
 ![license](https://img.shields.io/badge/license-mit-blue.svg)
 
