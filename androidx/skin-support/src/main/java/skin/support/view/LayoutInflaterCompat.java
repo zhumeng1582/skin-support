@@ -9,10 +9,11 @@ import android.view.View;
 
 import java.lang.reflect.Field;
 
+import skin.support.utils.Slog;
+
 public final class LayoutInflaterCompat {
     private static final String TAG = "LayoutInflaterCompatHC";
 
-    private static Field sLayoutInflaterFactory2Field;
     private static boolean sCheckedField;
 
     @SuppressWarnings("deprecation")
@@ -47,10 +48,11 @@ public final class LayoutInflaterCompat {
      * log an error.
      */
     private static void forceSetFactory2(LayoutInflater inflater, LayoutInflater.Factory2 factory) {
+        Field factory2Field = null;
         if (!sCheckedField) {
             try {
-                sLayoutInflaterFactory2Field = LayoutInflater.class.getDeclaredField("mFactory2");
-                sLayoutInflaterFactory2Field.setAccessible(true);
+                factory2Field = LayoutInflater.class.getDeclaredField("mFactory2");
+                factory2Field.setAccessible(true);
             } catch (NoSuchFieldException e) {
                 Log.e(TAG, "forceSetFactory2 Could not find field 'mFactory2' on class "
                         + LayoutInflater.class.getName()
@@ -58,9 +60,9 @@ public final class LayoutInflaterCompat {
             }
             sCheckedField = true;
         }
-        if (sLayoutInflaterFactory2Field != null) {
+        if (factory2Field != null) {
             try {
-                sLayoutInflaterFactory2Field.set(inflater, factory);
+                factory2Field.set(inflater, factory);
             } catch (IllegalAccessException e) {
                 Log.e(TAG, "forceSetFactory2 could not set the Factory2 on LayoutInflater "
                         + inflater + "; inflation may have unexpected results.", e);
@@ -112,9 +114,13 @@ public final class LayoutInflaterCompat {
      *
      * @see LayoutInflater#setFactory2(android.view.LayoutInflater.Factory2)
      */
-    public static void setFactory2(
-            LayoutInflater inflater, LayoutInflater.Factory2 factory) {
-        inflater.setFactory2(factory);
+    public static void setFactory2(LayoutInflater inflater, LayoutInflater.Factory2 factory) {
+        try {
+            inflater.setFactory2(factory);
+        } catch (Exception e) {
+            Slog.i("setFactory2 failed. Try forceSetFactory2");
+            forceSetFactory2(inflater, factory);
+        }
 
         if (Build.VERSION.SDK_INT < 21) {
             final LayoutInflater.Factory f = inflater.getFactory();
