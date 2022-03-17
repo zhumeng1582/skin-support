@@ -2,7 +2,7 @@
 
 中文 | [In English](docs/README.md) 
 
-[![skin-support](https://img.shields.io/badge/release-v4.0.5-green.svg)](http://jcenter.bintray.com/skin/support)
+[![](https://jitpack.io/v/LittleFogCat/Android-skin-support.svg)](https://jitpack.io/#LittleFogCat/Android-skin-support)
 ![build](https://img.shields.io/badge/build-passing-green.svg)
 ![license](https://img.shields.io/badge/license-mit-blue.svg)
 
