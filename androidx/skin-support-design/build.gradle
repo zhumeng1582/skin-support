@@ -41,7 +41,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.littlefogcat'
-                artifactId = 'android-skin-support-material'
+                artifactId = 'skin-support-material'
                 version = rootProject.skinAndroidXVersion
             }
         }

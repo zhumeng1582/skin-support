@@ -40,7 +40,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.littlefogcat'
-                artifactId = 'android-skin-support-constraintlayout'
+                artifactId = 'skin-support-constraintlayout'
                 version = rootProject.skinAndroidXVersion
             }
         }
