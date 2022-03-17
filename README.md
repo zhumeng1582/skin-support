@@ -20,7 +20,7 @@
 2. 在模块 `build.gradle` 中加入依赖：
 ```gradle
 	dependencies {
-	        implementation 'com.github.littlefogcat:android-skin-support:latest-version'
+	        implementation 'com.github.littlefogcat:skin-support:latest-version'
 	}
 ```
 
