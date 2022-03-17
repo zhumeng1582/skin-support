@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -34,4 +37,22 @@ ext {
     descContent = 'skin-support core'
 }
 
-//apply from: '../../publishing_maven.gradle'
+
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.littlefogcat'
+                artifactId = 'android-skin-support'
+                version = publishVersion
+            }
+        }
+    }
+}

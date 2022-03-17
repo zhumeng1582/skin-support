@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -31,4 +34,15 @@ ext {
     descContent = 'ConstraintLayout控件换肤支持包'
 }
 
-//apply from: '../../publishing_maven.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.littlefogcat'
+                artifactId = 'android-skin-support-constraintlayout'
+                version = rootProject.skinAndroidXVersion
+            }
+        }
+    }
+}
