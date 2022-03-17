@@ -34,4 +34,4 @@ ext {
     descContent = 'skin-support core'
 }
 
-apply from: '../../publishing_maven.gradle'
+//apply from: '../../publishing_maven.gradle'

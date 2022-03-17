@@ -24,7 +24,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation project(':androidx:skin-support')
 }
 
@@ -41,4 +41,4 @@ ext {
     descContent = 'skin-support 基础控件换肤支持包'
 }
 
-apply from: '../../publishing_maven.gradle'
+//apply from: '../../publishing_maven.gradle'

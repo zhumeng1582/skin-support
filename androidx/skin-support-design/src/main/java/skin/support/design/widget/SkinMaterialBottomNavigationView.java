@@ -1,22 +1,22 @@
 package skin.support.design.widget;
 
+import static skin.support.widget.SkinCompatHelper.INVALID_ID;
+
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.util.TypedValue;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.util.AttributeSet;
-import android.util.TypedValue;
 
 import skin.support.content.res.SkinCompatResources;
 import skin.support.design.R;
 import skin.support.widget.SkinCompatBackgroundHelper;
 import skin.support.widget.SkinCompatHelper;
 import skin.support.widget.SkinCompatSupportable;
-
-import static skin.support.widget.SkinCompatHelper.INVALID_ID;
 
 /**
  * Created by ximsfei on 17-3-1.
@@ -45,20 +45,21 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         mBackgroundTintHelper = new SkinCompatBackgroundHelper(this);
         mBackgroundTintHelper.loadFromAttributes(attrs, defStyleAttr);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BottomNavigationView, defStyleAttr,
-                R.style.Widget_Design_BottomNavigationView);
+//        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BottomNavigationView, defStyleAttr,
+//                R.style.Widget_Design_BottomNavigationView);
 
-        if (a.hasValue(R.styleable.BottomNavigationView_itemIconTint)) {
-            mIconTintResId = a.getResourceId(R.styleable.BottomNavigationView_itemIconTint, INVALID_ID);
-        } else {
-            mDefaultTintResId = resolveColorPrimary();
-        }
-        if (a.hasValue(R.styleable.BottomNavigationView_itemTextColor)) {
-            mTextColorResId = a.getResourceId(R.styleable.BottomNavigationView_itemTextColor, INVALID_ID);
-        } else {
-            mDefaultTintResId = resolveColorPrimary();
-        }
-        a.recycle();
+//        if (a.hasValue(R.styleable.BottomNavigationView_itemIconTint)) {
+//            mIconTintResId = a.getResourceId(R.styleable.BottomNavigationView_itemIconTint, INVALID_ID);
+//        } else {
+        mDefaultTintResId = resolveColorPrimary();
+//        }
+//        if (a.hasValue(R.styleable.BottomNavigationView_itemTextColor)) {
+//            mTextColorResId = a.getResourceId(R.styleable.BottomNavigationView_itemTextColor, INVALID_ID);
+//        } else {
+        mDefaultTintResId = resolveColorPrimary();
+//        }
+//        a.recycle();
+
         applyItemIconTintResource();
         applyItemTextColorResource();
     }

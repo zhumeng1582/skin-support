@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.ConstantState;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import androidx.collection.ArrayMap;
 import androidx.collection.LongSparseArray;
 import androidx.collection.LruCache;
 import androidx.appcompat.R;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -110,12 +112,9 @@ final class SkinCompatDrawableManager {
             R.drawable.abc_textfield_search_activated_mtrl_alpha,
             R.drawable.abc_cab_background_top_mtrl_alpha,
             R.drawable.abc_text_cursor_material,
-            R.drawable.abc_text_select_handle_left_mtrl_dark,
-            R.drawable.abc_text_select_handle_middle_mtrl_dark,
-            R.drawable.abc_text_select_handle_right_mtrl_dark,
-            R.drawable.abc_text_select_handle_left_mtrl_light,
-            R.drawable.abc_text_select_handle_middle_mtrl_light,
-            R.drawable.abc_text_select_handle_right_mtrl_light
+            R.drawable.abc_text_select_handle_left_mtrl,
+            R.drawable.abc_text_select_handle_middle_mtrl,
+            R.drawable.abc_text_select_handle_right_mtrl
     };
 
     /**
@@ -701,7 +700,7 @@ final class SkinCompatDrawableManager {
         // Here we will check that a known Vector drawable resource inside AppCompat can be
         // correctly decoded
         mHasCheckedVectorDrawableSetup = true;
-        final Drawable d = getDrawable(context, R.drawable.abc_vector_test);
+        final Drawable d = getDrawable(context, androidx.appcompat.resources.R.drawable.abc_vector_test);
         if (d == null || !isVectorDrawable(d)) {
             mHasCheckedVectorDrawableSetup = false;
             throw new IllegalStateException("This app has been built with an incorrect "

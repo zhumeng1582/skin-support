@@ -19,7 +19,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
     implementation project(':androidx:skin-support')
     implementation project(':androidx:skin-support-appcompat')
 }
@@ -31,4 +31,4 @@ ext {
     descContent = 'ConstraintLayout控件换肤支持包'
 }
 
-apply from: '../../publishing_maven.gradle'
+//apply from: '../../publishing_maven.gradle'

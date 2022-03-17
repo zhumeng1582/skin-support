@@ -33,4 +33,4 @@ ext {
     descContent = 'H07000223/FlycoTabLayout 控件换肤支持包'
 }
 
-apply from: '../../publishing_maven.gradle'
+//apply from: '../../publishing_maven.gradle'

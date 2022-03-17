@@ -31,4 +31,4 @@ ext {
     descContent = 'hdodenhof/CircleImageView 控件换肤支持包'
 }
 
-apply from: '../../publishing_maven.gradle'
+//apply from: '../../publishing_maven.gradle'
