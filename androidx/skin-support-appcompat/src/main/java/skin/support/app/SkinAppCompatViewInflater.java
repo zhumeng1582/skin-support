@@ -21,6 +21,7 @@ import skin.support.widget.SkinCompatAutoCompleteTextView;
 import skin.support.widget.SkinCompatButton;
 import skin.support.widget.SkinCompatCheckBox;
 import skin.support.widget.SkinCompatCheckedTextView;
+import skin.support.widget.SkinCompatContentFrameLayout;
 import skin.support.widget.SkinCompatEditText;
 import skin.support.widget.SkinCompatFrameLayout;
 import skin.support.widget.SkinCompatImageButton;
@@ -133,6 +134,9 @@ public class SkinAppCompatViewInflater implements SkinLayoutInflater, SkinWrappe
         switch (name) {
             case "androidx.appcompat.widget.Toolbar":
                 view = new SkinCompatToolbar(context, attrs);
+                break;
+            case "androidx.appcompat.widget.ContentFrameLayout":
+                view = new SkinCompatContentFrameLayout(context, attrs);
                 break;
             default:
                 break;

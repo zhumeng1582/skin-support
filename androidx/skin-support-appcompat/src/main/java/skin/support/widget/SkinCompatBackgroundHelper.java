@@ -1,8 +1,11 @@
 package skin.support.widget;
 
 import android.content.res.TypedArray;
+import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import androidx.core.view.ViewCompat;
+
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -47,6 +50,10 @@ public class SkinCompatBackgroundHelper extends SkinCompatHelper {
         if (mBackgroundResId == INVALID_ID) {
             return;
         }
+        ColorFilter filter = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && mView.getBackground() != null) {
+            filter = mView.getBackground().getColorFilter();
+        }
         Drawable drawable = SkinCompatVectorResources.getDrawableCompat(mView.getContext(), mBackgroundResId);
         if (drawable != null) {
             int paddingLeft = mView.getPaddingLeft();
@@ -55,6 +62,9 @@ public class SkinCompatBackgroundHelper extends SkinCompatHelper {
             int paddingBottom = mView.getPaddingBottom();
             ViewCompat.setBackground(mView, drawable);
             mView.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+        }
+        if (filter != null) {
+            mView.getBackground().setColorFilter(filter);
         }
     }
 }
