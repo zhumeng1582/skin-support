@@ -119,8 +119,8 @@ public class SkinCompatResources {
             String type = context.getResources().getResourceTypeName(resId);
             return mResources.getIdentifier(resName, type, mSkinPkgName);
         } catch (Exception e) {
-            // 换肤失败不至于应用崩溃.
-            return 0;
+            // 资源置换失败返回原id
+            return resId;
         }
     }
 
