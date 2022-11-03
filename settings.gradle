@@ -1,10 +1,10 @@
-include ':demo:skin-night'
+//include ':demo:skin-night'
 
 // DEMO for android support
 //include ':demo:skin-app'
 
 // DEMO for androidx
-include ':demo:skin-androidx-app'
+//include ':demo:skin-androidx-app'
 
 // for android support
 //include ':android-support:skin-support'
@@ -18,6 +18,6 @@ include ':androidx:skin-support-appcompat'
 include ':androidx:skin-support-design'
 include ':androidx:skin-support-cardview'
 include ':androidx:skin-support-constraint-layout'
-include ':third-part-support:circleimageview'
+//include ':third-part-support:circleimageview'
 include ':third-part-support:flycotablayout'
-include ':demo:skin-mobile'
+//include ':demo:skin-mobile'
