@@ -51,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SkinComp
         boolean useDarkStatusBar = getResources().getBoolean(R.bool.use_dark_status);
         int resId = SkinCompatResources.getInstance().getTargetResId(this, R.bool.use_dark_status);
         if (resId != 0) {
-            useDarkStatusBar = SkinCompatResources.getInstance().getSkinResources().getBoolean(resId);
+            useDarkStatusBar = true;
         }
         if (useDarkStatusBar) {
             SkinStatusBarUtils.setStatusBarDarkMode(this);
