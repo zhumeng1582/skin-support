@@ -2,7 +2,7 @@
 
 中文 | [In English](docs/README.md) 
 
-[![](https://jitpack.io/v/LittleFogCat/Android-skin-support.svg)](https://jitpack.io/#LittleFogCat/Android-skin-support)
+[![](https://jitpack.io/v/zhumeng1582/Android-skin-support.svg)](https://jitpack.io/#zhumeng1582/Android-skin-support)
 
 增加了 [原 Android-skin-support 库](https://github.com/ximsfei/Android-skin-support) 对新版本 AndroidX 的支持。
 
@@ -20,7 +20,7 @@
 2. 在模块 `build.gradle` 中加入依赖：
 ```gradle
 	dependencies {
-	        implementation 'com.github.littlefogcat:skin-support:latest-version'
+	        implementation 'com.github.zhumeng1582:skin-support:latest-version'
 	}
 ```
 

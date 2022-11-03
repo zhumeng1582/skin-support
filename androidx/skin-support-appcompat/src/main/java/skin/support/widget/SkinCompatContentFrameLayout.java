@@ -6,8 +6,8 @@ import android.widget.FrameLayout;
 
 import androidx.appcompat.widget.ContentFrameLayout;
 /**
- * @author littlefogcat
- * @email littlefogcat@foxmail.com
+ * @author zhumeng1582
+ * @email zhumeng1582@foxmail.com
  */
 public class SkinCompatContentFrameLayout extends ContentFrameLayout implements SkinCompatSupportable {
     private SkinCompatBackgroundHelper mBackgroundTintHelper;
