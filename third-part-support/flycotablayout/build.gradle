@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -32,6 +35,21 @@ ext {
     publishGroup = rootProject.skinAndroidXSkinGroup
     moduleName = 'flycotablayout'
     descContent = 'H07000223/FlycoTabLayout 控件换肤支持包'
+}
+
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.zhumeng1582'
+                artifactId = 'skin-support-flycotablayout'
+                version = rootProject.skinAndroidXVersion
+            }
+        }
+    }
 }
 
 //apply from: '../../publishing_maven.gradle'
